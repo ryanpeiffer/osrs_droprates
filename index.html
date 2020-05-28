@@ -2,16 +2,24 @@
 <meta charset="utf-8">
 
 <!-- Load dependencies -->
-<script src="https://d3js.org/d3.v4.js"></script>
-<link rel="stylesheet" href="stylesheet.css"></link>
+<head>
+	<script src="https://d3js.org/d3.v4.js"></script>
+	<link rel="stylesheet" href="stylesheet.css"></link>
+</head>
 
-<!-- User inputs -->
-<label for="droprate">Droprate (1 in X):</label>
-<input type="number" id="droprate" name="droprate" min="1" max="5000" value="20" onchange="update()">
+<body>
+	<p>A lot of OSRS players complain about being unlucky due to not receiving drops by the time they hit the droprate.</p>
+	<p>I've created this webpage to help players explore probabilities around receiving drops.</p>
 
-<label for="killcount">Current killcount:</label>
-<input type="number" id="killcount" name="killcount" min="1" max="5000" value="15" onchange="update()">
+	<!-- User inputs -->
+	<label for="droprate">Droprate (1 in X):</label>
+	<input type="number" id="droprate" name="droprate" min="1" max="5000" value="50" onchange="update()">
 
-<!-- create div to store cdf graph -->
-<div id="cdf_graph"></div>
-<script src="generate_cdf.js"></script>
+	<label for="killcount">Current killcount:</label>
+	<input type="number" id="killcount" name="killcount" min="1" max="5000" value="15" onchange="update()">
+
+	<!-- create div to store cdf graph -->
+	<div id="cdf_graph"></div>
+	<p>At your current killcount of <span id="kc_span"></span> there is a <span id="kcprob_span"></span>% chance of not receiving the drop yet. </p>
+	<script src="generate_cdf.js"></script>
+</body>
