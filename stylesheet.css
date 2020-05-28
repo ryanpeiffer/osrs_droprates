@@ -1,0 +1,51 @@
+@font-face {
+  font-family: runescapeFont;
+  src: url(font/rs-font.ttf)
+}
+
+body {
+  background-color: black;
+  font-family: runescapeFont;
+  color: #FFFF00;
+}
+
+#cdf_graph {
+  background-image: url(images/cdf-bkg.png);
+  background-repeat: no-repeat;
+}
+
+.cdfLine {
+    fill: none;
+    stroke: black;
+    stroke-width: 3;
+}
+
+.kcDot {
+  fill: #ffab00;
+  stroke: #fff;
+}
+
+.myXaxis {
+
+}
+
+.myYaxis {
+
+}
+
+
+
+table {
+  background-image: url(images/tbl-scroll.png);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  color: black;
+  text-shadow: none;
+  border: none;
+}
+
+
+
+  
+
+
