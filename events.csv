@@ -1,0 +1,8 @@
+text,prob
+flipping heads on a coin,0.5
+flipping heads twice in a row,0.25
+flipping heads three times in a row,0.125
+rolling snake eyes on a pair of dice,0.083
+the average MLB player getting a hit,0.25
+picking a spade from a deck of cards,0.25
+picking an ace from a deck of cards,0.076923077

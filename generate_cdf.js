@@ -1,5 +1,5 @@
 
-var t = 500; //duration for transitions
+const t = 500; //duration for transitions
 
 
 // set the dimensions and margins of the graph
@@ -77,11 +77,11 @@ function update() {
     .duration(t)
     .call(yAxis);
 
-  // Create a update selection: bind to the new data
+  // update data for the line
   var myline = svg.selectAll(".cdfLine")
     .data([cdf_data], function(d){ return d });
 
-  // Updata the line
+  // Update the line
   myline
     .enter()
     .append("path")
@@ -92,13 +92,18 @@ function update() {
     .attr("d", d3.line()
       .x(function(d) { return x(d.kills); })
       .y(function(d) { return y(d.probs); }));
+   myline.exit().remove();
 
-  //Append killcount dot to svg
+  //Update data for killcount dot
   var kcData = cdf_data.filter(cdf_data => cdf_data.kills == killcount);
+  if(kcData.length < 1) {
+  	kcData = cdf_data.slice(cdf_data.length - 1);
+  }
   var kcDot = svg.selectAll(".kcDot")
     .data(kcData);
-  
-  kcDot
+
+  //Update the killcount dot
+   kcDot
     .enter()
     .append("circle")
     .attr("class", "kcDot")
@@ -109,14 +114,15 @@ function update() {
     .attr("cy", function(d) {return y(d.probs) })
     .attr("r", 5);
 
-	//display text below graph
-	var kcProb = (1 - (1/droprate))**killcount
-	var kc_span = document.getElementById('kc_span')
-		.textContent = killcount
-	var kcProb_span = document.getElementById('kcprob_span')
-		.textContent = (kcProb*100).toFixed(2)
+  //Make sure dot is drawn in front of the line
+  kcDot.raise();
 
- 
+	//update numbers in text below graph
+	var kcProb = (1 - (1/droprate))**killcount;
+	var kc_span = document.getElementById('kc_span')
+		.textContent = killcount;
+	var kcProb_span = document.getElementById('kcprob_span')
+		.textContent = (kcProb*100).toFixed(2);
 }
 
 
