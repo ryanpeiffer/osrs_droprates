@@ -26,7 +26,7 @@ body {
 }
 
 .kcDot {
-  fill: #ffab00;
+  fill: #38ab54;
   stroke: #fff;
 }
 
@@ -38,17 +38,20 @@ body {
 
 }
 
-
-
 table {
+  width: 480px;
   background-image: url(images/tbl-scroll.png);
   background-color: transparent;
   background-repeat: no-repeat;
   color: black;
   text-shadow: none;
   border: none;
+  text-align: center;
 }
 
+tr {
+  height: 30px;
+}
 
 
   

@@ -9,7 +9,7 @@
 
 <body>
 	<div>
-		<p>A lot of OSRS players complain about being unlucky due to not receiving drops by the time they hit the droprate.</p>
+		<p>A lot of Old School RuneScape players complain about being unlucky due to not receiving drops by the time they hit the droprate.</p>
 		<p>I've created this webpage to help players explore probabilities around receiving drops.</p>
 	</div>
 	
@@ -18,7 +18,7 @@
 		<input type="number" id="droprate" name="droprate" min="1" max="5000" value="50" onchange="update()">
 
 		<label for="killcount">Current killcount:</label>
-		<input type="number" id="killcount" name="killcount" min="1" max="25000" value="15" onchange="update()">
+		<input type="number" id="killcount" name="killcount" min="1" max="25000" value="50" onchange="update()">
 	</div>
 
 	<!-- create div to store cdf graph -->
@@ -31,6 +31,36 @@
 	<div>
 		<p>At your current killcount of <span id="kc_span"></span> there is a <span id="kcprob_span"></span>% chance of not receiving the drop yet. </p>
 		<p>That's similar to <span id="prob_event_span"></span>!</p>
+	</div>
+
+	<div>
+		<p>Here's a table showing how many kills it takes to have a certain % chance of receiving the drop.</p>
+		<table id="kcTable">
+			<tr>
+				<td>r1c1</td> 
+				<td>r1c2</td> 
+				<td>r1c2</td> 
+				<td>r1c3</td> 
+				<td>r1c4</td> 
+				<td>r1c5</td> 
+				<td>r1c6</td> 
+				<td>r1c7</td> 
+			</tr>
+			<tr>
+				<td>r2c1</td> 
+				<td>r2c2</td> 
+				<td>r2c2</td> 
+				<td>r2c3</td> 
+				<td>r2c4</td> 
+				<td>r2c5</td> 
+				<td>r2c6</td> 
+				<td>r2c7</td> 
+			</tr>
+		</table>
+	</div>
+
+	<div>
+		<p>Check out the code or leave a suggestion on <a href="https://github.com/ryanpeiffer/osrs_droprates">Github</a>. </p>
 	</div>
 
 	<script src="generate_cdf.js"></script>
